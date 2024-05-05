@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanning in Progress</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+            header h1 {
+                font-size: 2.5em;
+                text-align: center;
+            }
+
+        main h2 {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        #scanning-indicator {
+            margin: 20px 0;
+            border: 5px solid #4CAF50;
+            border-radius: 50%;
+            border-top: 5px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer p {
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Web Application Security Scanner</h1>
+        </header>
+        <main>
+            <h2>Scanning in Progress...</h2>
+            <p>Please wait while we scan the website for vulnerabilities. This process may take a few moments.</p>
+            <div id="scanning-indicator"></div>
+            <p id="status">Initializing scan...</p>
+        </main>
+        <footer>
+            <p>Thank you for using our security scanner. Your security is our priority.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple timeout to redirect to results page after 10 seconds
+        setTimeout(function() {
+            window.location.href = "{{ url_for('show_results') }}";
+        }, 10000);
+    </script>
+
+
+
+</body>
+</html>

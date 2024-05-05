@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Security Scanner</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .main-header {
+            background: #333;
+            color: #fff;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+            .main-header img.logo {
+                height: 60px;
+            }
+
+            .main-header h1 {
+                margin: 0;
+                font-size: 2.5rem;
+            }
+
+        .scanner {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+            .scanner h2 {
+                color: #333;
+                margin-top: 0;
+            }
+
+            .scanner p {
+                margin-bottom: 20px;
+            }
+
+            .scanner input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .scanner .btn {
+                display: block;
+                width: 100%;
+                background: #5cb85c;
+                color: #fff;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1.2rem;
+            }
+
+                .scanner .btn:hover {
+                    background: #4cae4c;
+                }
+
+        .site-footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+
+            .footer-inner div {
+                margin-right: 30px;
+            }
+
+            .footer-inner h3 {
+                margin-bottom: 10px;
+            }
+
+            .footer-inner ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-inner li a {
+                color: #99d9f4;
+                text-decoration: none;
+            }
+
+                .footer-inner li a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Web Application Security Scanner</h1>
+        </header>
+        <main>
+            <section class="scanner">
+                <h2>Free Security Scan</h2>
+                <p>Enter the URL of the web application you want to scan:</p>
+                <form action="/scan" method="post" class="scan-form">
+                    <input type="text" id="urlInput" name="url" placeholder="https://example.com" required>
+                    <button type="submit" class="btn scan-btn">Scan Now</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>If you have any questions, please feel free to reach out.</p>
+                <ul>
+                    <li>Email: contact@securityscanner.com</li>
+                    <li>Phone: +07376004229</li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#" class="twitter-icon">Twitter</a></li>
+                    <li><a href="#" class="linkedin-icon">LinkedIn</a></li>
+                    <li><a href="#" class="github-icon">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

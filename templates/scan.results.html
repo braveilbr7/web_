@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Results</title>
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 1.8rem;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: normal;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+
+        .no-vulnerabilities {
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #d6e9c6;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Web Application Scan Results</h1>
+    </div>
+
+    <!-- Table of results -->
+    {% if vulnerabilities %}
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>URL</th>
+                <th>Details</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vuln in vulnerabilities %}
+            <tr>
+                <td>{{ vuln.vulnerability }}</td>
+                <td><a href="{{ vuln.url }}">{{ vuln.url }}</a></td>
+                <td>{{ vuln.details }}</td>
+                <td>{{ vuln.recommendation }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="no-vulnerabilities">
+        No vulnerabilities found.
+    </div>
+    {% endif %}
+
+    <footer>
+        &copy; 2024 Security Scanner Corp. All rights reserved.
+    </footer>
+</body>
+</html>

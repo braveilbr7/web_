@@ -1,0 +1,94 @@
+﻿/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f0ff; /* Soft blue background */
+    color: #333; /* Darker text for better readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for centering the content */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Main header styles */
+.main-header {
+    background: #005792; /* Dark blue background for the header */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .main-header img.logo {
+        width: 100px; /* Adjust size as needed */
+    }
+
+/* Main section styling */
+.scanner {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1); /* Adds shadow to the section */
+}
+
+/* Form styling */
+.scan-form input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+}
+
+.scan-form button {
+    background-color: #007BFF; /* Bootstrap primary blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+    .scan-form button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+/* Footer styling */
+.site-footer {
+    background-color: #002244; /* Very dark blue */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+    .site-footer .footer-inner {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .site-footer ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .site-footer ul li a {
+            color: #69a7ff; /* Light blue for links */
+            text-decoration: none;
+        }
+
+            .site-footer ul li a:hover {
+                text-decoration: underline;
+            }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .site-footer .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
